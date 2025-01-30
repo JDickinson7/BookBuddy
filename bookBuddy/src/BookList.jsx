@@ -1,40 +1,35 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
-const UserList = () => {
-  const [users, setUsers] = useState([]);
+const BookList = () => {
+  const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    const getUsers = async () => {
+    const getBooks = async () => {
       try {
         const response = await fetch('https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books');
         if (!response.ok) {
           throw new Error('Failed to fetch books');
         }
-        const allUsers = await response.json();
-        setUsers(allUsers); // Setting the users data into state
+        //fix up the if and catch before you turn it in 
+        const data = await response.json();
+        setBooks(data);
       } catch (error) {
-        console.error('Error fetching users:', error);
+        console.error(error);
       }
     };
-
-    getUsers(); // Calling the async function to fetch data
-
-    // Cleanup function (if needed)
-    return () => {
-      // No cleanup needed here, but this is where you'd put it if necessary
-    };
-  }, []); // Empty dependency array means this effect runs once on mount
+    getBooks();
+  }, []);
 
   return (
-    <ol>
-      {users.map((singleUser) => (
-        <li key={singleUser.id}>
-          <Link to={`/details/${singleUser.id}`}>{singleUser.name}</Link>
-        </li>
-      ))}
-    </ol>
+    <div>
+      <h1>Library Catalog</h1>
+      <ul>
+        {/* {books.map(book => (
+          <li key={book.id}>{book.title}</li>
+        ))} */}
+      </ul>
+    </div>
   );
 };
 
-export default UserList;
+export default BookList;

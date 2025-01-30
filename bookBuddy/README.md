@@ -1,8 +1,15 @@
-# React + Vite
+Book Buddy 
+--------------
+Need to do:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+input the APi 
+Fetch 
+List all books 
+use click to view details of an individual book 
+create a log in 
+register a new account -- use a form 
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+checkout an available book? 
+View their account info 
+books checked out currently 
+return a book 
