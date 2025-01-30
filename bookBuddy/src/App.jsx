@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import BookList from './BookList'; // Make sure these components are correctly imported
+import BookList from './BookList';
 import BookDetail from './BookDetail';
 
-function App() {
+const App = () => {
   return (
     <Router>
       <h1>Book Buddy</h1>
